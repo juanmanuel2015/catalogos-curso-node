@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= curso.titulo %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div>
+      <h1><%= curso.titulo %></h1>
+      <p>Detalle completo del curso seleccionado</p>
+    </div>
+
+    <a href="/" class="btn-secundario">Volver al catálogo</a>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="detalle-curso">
+      <div class="detalle-imagen">
+        <img src="<%= curso.imagen %>" alt="<%= curso.titulo %>">
+      </div>
+
+      <div class="detalle-info">
+        <span class="categoria"><%= curso.categoria %></span>
+
+        <h2><%= curso.titulo %></h2>
+
+        <p class="descripcion-detalle">
+          <%= curso.descripcion %>
+        </p>
+
+        <div class="detalle-datos">
+          <p><strong>Categoría:</strong> <%= curso.categoria %></p>
+          <p><strong>Duración:</strong> <%= curso.duracion %></p>
+          <p><strong>Modalidad:</strong> <%= curso.modalidad %></p>
+        </div>
+
+        <a href="/" class="btn-admin">Volver</a>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

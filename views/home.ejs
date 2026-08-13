@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Cursos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div>
+      <h1>Catálogo de Cursos</h1>
+      <p>Aprendé nuevas habilidades con nuestros cursos disponibles</p>
+    </div>
+
+    <a href="/admin/cursos" class="btn-admin">Panel admin</a>
+  </header>
+
+  <main class="contenedor">
+    <section class="grid-cursos">
+
+      <% cursos.forEach(curso => { %>
+
+        <article class="card">
+          <img src="<%= curso.imagen %>" alt="<%= curso.titulo %>">
+
+          <div class="card-body">
+            <span class="categoria"><%= curso.categoria %></span>
+
+            <h2><%= curso.titulo %></h2>
+
+            <p><%= curso.descripcion %></p>
+
+            <div class="info">
+              <span>⏱ <%= curso.duracion %></span>
+              <span>💻 <%= curso.modalidad %></span>
+            </div>
+
+            <a href="/detalle/<%= curso.id %>" class="btn-admin">Ver detalle</a>
+          </div>
+        </article>
+
+      <% }) %>
+
+    </section>
+  </main>
+
+</body>
+</html>

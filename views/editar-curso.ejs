@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Curso</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div>
+      <h1>Editar Curso</h1>
+      <p>Modificar información del curso</p>
+    </div>
+
+    <a href="/admin/cursos" class="btn-secundario">Volver</a>
+  </header>
+
+  <main class="contenedor">
+    <form class="formulario" action="/admin/cursos/editar/<%= curso.id %>" method="POST">
+
+      <label>Título</label>
+      <input type="text" name="titulo" value="<%= curso.titulo %>" required>
+
+      <label>Descripción</label>
+      <textarea name="descripcion" required><%= curso.descripcion %></textarea>
+
+      <label>Categoría</label>
+      <input type="text" name="categoria" value="<%= curso.categoria %>" required>
+
+      <label>Duración</label>
+      <input type="text" name="duracion" value="<%= curso.duracion %>" required>
+
+      <label>Modalidad</label>
+      <select name="modalidad" required>
+        <option value="Online" <%= curso.modalidad === 'Online' ? 'selected' : '' %>>Online</option>
+        <option value="Presencial" <%= curso.modalidad === 'Presencial' ? 'selected' : '' %>>Presencial</option>
+        <option value="Mixta" <%= curso.modalidad === 'Mixta' ? 'selected' : '' %>>Mixta</option>
+      </select>
+
+      <label>URL de imagen</label>
+      <input type="text" name="imagen" value="<%= curso.imagen %>" required>
+
+      <label>Estado</label>
+      <select name="estado">
+        <option value="1" <%= curso.estado == 1 ? 'selected' : '' %>>Activo</option>
+        <option value="0" <%= curso.estado == 0 ? 'selected' : '' %>>Inactivo</option>
+      </select>
+
+      <button type="submit">Actualizar curso</button>
+    </form>
+  </main>
+
+</body>
+</html>
